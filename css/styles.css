@@ -74,9 +74,9 @@ img {
   margin: 0 auto;
 }
 
-.section {
+/* .section {
   padding: 120px;
-}
+} */
 
 .visually-hidden {
   position: absolute;
@@ -308,8 +308,7 @@ img {
 .portfolio {
   margin: 0 auto;
   background-color: var(--white-background-color);
-  padding-top: 120px; 
-  padding-bottom: 120px;
+  padding: 120px 0;
 }
 
 .portfolio-title {
@@ -363,10 +362,7 @@ img {
 
 .footer {
   background-color: var(--dark-color);
-}
-
-.footer .section {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 
 .footer .logo {
