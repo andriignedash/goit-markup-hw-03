@@ -71,12 +71,23 @@ img {
   max-width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: 36px;
-  margin-right: 36px;
+  margin: 0 auto;
 }
 
 .section {
   padding: 120px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
 }
 
 .card-set {
@@ -106,6 +117,7 @@ img {
   display: flex;
   margin-right: 332px;
   flex-grow: 1;
+  align-items: center;
 }
 
 .logo {
@@ -176,21 +188,24 @@ img {
 }
 
 .hero-image {
-  background-color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: var(--dark-color);
+  padding: 188px 0;
   text-align: center;
-  padding: 188px 472px;
 }
 
 .hero-image-title {
-  width: 496px;
+  max-width: 496px;
   color: var(--white-background-color);
   font-weight: 700;
   font-size: 56px;
   line-height: 107%;
   letter-spacing: 0.02em;
-  text-align: center;
   margin-bottom: 48px;
+  text-align: center;
 }
 
 .hero-image-button {
@@ -203,8 +218,11 @@ img {
   line-height: 150%;
   letter-spacing: 0.04em;
   border-radius: 4px;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
+  display: block;
+  border: none;
+  margin: 0 auto;
 }
 
 .hero-image-button:hover,
@@ -214,6 +232,11 @@ img {
 
 .about-company {
   justify-content: center;
+  padding: 120px 0;
+}
+
+.features {
+  gap: 24px;
 }
 
 .features-item {
@@ -233,6 +256,7 @@ img {
 
 .team {
   background-color: var(--light-color);
+  padding: 120px 0;
 }
 
 .team-title {
@@ -250,6 +274,11 @@ img {
   justify-content: space-between;
   list-style: none;
   margin: 0;
+  gap: 24px;
+}
+
+.team-list-content{
+  padding: 32px 0;
 }
 
 .team-list-item {
@@ -257,13 +286,9 @@ img {
   text-align: center;
   overflow: hidden;
   border-radius: 0 0 4px 4px;
-  padding: 0px 0px 32px 0px;
   width: 264px;
 }
 
-.team-list-photo {
-  margin-bottom: 32px;
-}
 
 .team-list-name {
   font-weight: 500;
@@ -271,16 +296,20 @@ img {
   line-height: 1.2;
   color: #2e2f42;
   margin-bottom: 8px;
+  text-align: center; 
 }
 
 .team-list-job {
   color: var(--text-color);
   line-height: 1.5;
+  text-align: center; 
 }
 
 .portfolio {
   margin: 0 auto;
   background-color: var(--white-background-color);
+  padding-top: 120px; 
+  padding-bottom: 120px;
 }
 
 .portfolio-title {
@@ -301,7 +330,6 @@ img {
   grid-template-columns: repeat(3, 1fr);
   list-style: none;
 }
-
 
 .portfolio-item {
   background-color: var(--white-background-color);
@@ -337,14 +365,14 @@ img {
   background-color: var(--dark-color);
 }
 
-.footer .container {
-  width: 264px;
-  text-align: left;
-  padding: 0;
+.footer .section {
+  padding: 100px 0;
 }
 
 .footer .logo {
   margin-bottom: 16px;
+  display: inline-block; 
+  text-align: left;
 }
 
 .footer .logo-part {
@@ -357,4 +385,6 @@ img {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
+  max-width: 264px
 }
+
