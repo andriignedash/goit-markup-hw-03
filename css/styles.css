@@ -12,6 +12,10 @@
   --hero-background-color: #2e2f42b3; /* Color #2E2F42 with 70% opacity */
   --white-background-color: #ffffff;
   --modal-background-color: #fcfcfc;
+
+  --items: 4;
+  --indent-row: 48px;
+  --indent-col: 24px;
 }
 
 body {
@@ -21,7 +25,6 @@ body {
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0.02em;
-  margin: 0;
 }
 
 a {
@@ -32,26 +35,77 @@ a {
 ul,
 ol {
   list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 h2 {
   font-weight: bold;
   font-size: 36px;
   letter-spacing: 2%;
-  margin: 0;
   text-align: center;
+  margin: 0 auto;
 }
 
 h3 {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 2%;
-  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 36px;
+  margin-right: 36px;
+}
+
+.section {
+  padding: 120px;
+}
+
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--indent-row);
+  column-gap: var(--indent-col);
+}
+
+.card-set-item {
+  width: calc((100% - var(--indent-col) * (var(--items) - 1)) / var(--items));
 }
 
 .top-line {
   justify-content: space-between;
   margin: 0 auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.top-line .container {
+  display: flex;
+}
+
+.top-line-menu {
+  display: flex;
+  margin-right: 332px;
+  flex-grow: 1;
 }
 
 .logo {
@@ -63,6 +117,9 @@ h3 {
   text-transform: uppercase;
   color: #4d5ae5;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-right: 76px;
 }
 
 .logo-part {
@@ -70,8 +127,10 @@ h3 {
 }
 
 .menu {
-  margin: 0;
   list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .menu-item {
@@ -81,6 +140,8 @@ h3 {
   text-decoration: none;
   color: #2e2f42;
   line-height: 1.5;
+  padding: 24px 0;
+  display: block;
 }
 
 .menu-item:hover,
@@ -91,8 +152,10 @@ h3 {
 .contacts {
   font-weight: 400;
   font-style: normal;
-  margin: 0;
   list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .contacts-item {
@@ -100,6 +163,8 @@ h3 {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  padding: 24px 0;
+  display: block;
 }
 
 .contacts-item:hover {
@@ -114,29 +179,32 @@ h3 {
   background-color: var(--dark-color);
   justify-content: center;
   text-align: center;
+  padding: 188px 472px;
 }
 
 .hero-image-title {
+  width: 496px;
+  color: var(--white-background-color);
   font-weight: 700;
   font-size: 56px;
-  color: var(--white-background-color);
-  margin-bottom: 48px;
-  text-align: center;
-  line-height: 1.07;
+  line-height: 107%;
   letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 48px;
 }
 
 .hero-image-button {
   background-color: var(--primary-brand-color);
   color: var(--white-background-color);
-  font-size: 18px;
-  font-weight: 500;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.04em;
   font-family: var(--primary-font);
-  line-height: 1.5;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  width: 169px;
+  height: 56px;
 }
 
 .hero-image-button:hover,
@@ -148,15 +216,15 @@ h3 {
   justify-content: center;
 }
 
-.features {
-  margin: 0 auto;
-  list-style: none;
+.features-item {
+  width: 264px;
 }
 
 .feature-item-title {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 
 .feature-item-text {
@@ -165,7 +233,6 @@ h3 {
 
 .team {
   background-color: var(--light-color);
-  margin: 0 auto;
 }
 
 .team-title {
@@ -176,6 +243,7 @@ h3 {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #2e2f42;
+  margin-bottom: 72px;
 }
 
 .team-list {
@@ -188,10 +256,13 @@ h3 {
   background-color: var(--white-background-color);
   text-align: center;
   overflow: hidden;
+  border-radius: 0 0 4px 4px;
+  padding: 0px 0px 32px 0px;
+  width: 264px;
 }
 
 .team-list-photo {
-  margin: 0;
+  margin-bottom: 32px;
 }
 
 .team-list-name {
@@ -199,6 +270,7 @@ h3 {
   letter-spacing: 0.02em;
   line-height: 1.2;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 
 .team-list-job {
@@ -209,7 +281,6 @@ h3 {
 .portfolio {
   margin: 0 auto;
   background-color: var(--white-background-color);
-  margin-bottom: 120px;
 }
 
 .portfolio-title {
@@ -222,39 +293,58 @@ h3 {
   letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #2e2f42;
+  margin-bottom: 72px;
 }
 
 .portfolio-list {
+  --items: 3;
   grid-template-columns: repeat(3, 1fr);
   list-style: none;
-  margin: 0;
 }
+
 
 .portfolio-item {
   background-color: var(--white-background-color);
   overflow: hidden;
+  width: 360px;
+}
+
+.portfolio-item-content {
+  padding: 32px 16px;
+  border-right: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
 }
 
 .portfolio-item-title {
   font-weight: 500;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 120%;
   letter-spacing: 0.02em;
   color: #2e2f42;
+  margin-bottom: 8px;
 }
 
 .portfolio-item-type {
   color: var(--text-color);
-  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
 }
 
 .footer {
   background-color: var(--dark-color);
-  justify-content: center;
 }
 
-.footer-content {
+.footer .container {
+  width: 264px;
   text-align: left;
-  margin: 0 1020px 0 156px;
+  padding: 0;
+}
+
+.footer .logo {
+  margin-bottom: 16px;
 }
 
 .footer .logo-part {
@@ -262,8 +352,9 @@ h3 {
 }
 
 .footer-text {
-  font-size: 16px;
-  letter-spacing: 0.02em;
   color: var(--light-color);
-  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
 }
